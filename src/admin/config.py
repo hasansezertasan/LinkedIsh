@@ -14,6 +14,7 @@ from database.models import (
     Position,
     School,
     Skill,
+    User,
 )
 
 from .views import (
@@ -30,6 +31,7 @@ from .views import (
     PositionModelView,
     SchoolModelView,
     SkillModelView,
+    UserModelView,
 )
 
 admin = Admin(
@@ -39,17 +41,17 @@ admin = Admin(
 )
 
 # Categories
-admin.add_category(name="Fixed")
+admin.add_category(name="Store")
 admin.add_category(name="Extra")
 admin.add_category(name="Dynamic")
 admin.add_sub_category(name="Feedbacks", parent_name="Dynamic")
-admin.add_sub_category(name="Audiences", parent_name="Fixed")
-admin.add_sub_category(name="Skills", parent_name="Fixed")
+admin.add_sub_category(name="Audiences", parent_name="Store")
+admin.add_sub_category(name="Skills", parent_name="Store")
 admin.add_sub_category(name="Announcements", parent_name="Dynamic")
-admin.add_sub_category(name="Languages", parent_name="Fixed")
-admin.add_sub_category(name="Locations", parent_name="Fixed")
-admin.add_sub_category(name="Experiences", parent_name="Fixed")
-admin.add_sub_category(name="Educations", parent_name="Fixed")
+admin.add_sub_category(name="Languages", parent_name="Store")
+admin.add_sub_category(name="Locations", parent_name="Store")
+admin.add_sub_category(name="Experiences", parent_name="Store")
+admin.add_sub_category(name="Educations", parent_name="Store")
 
 # Menu Links
 admin.add_link(
@@ -165,5 +167,13 @@ admin.add_view(
         name="Feedbacks",
         category="Feedbacks",
         endpoint="feedbacks",
+    )
+)
+admin.add_view(
+    UserModelView(
+        model=User,
+        session=LocalSession(),
+        name="Users",
+        endpoint="users",
     )
 )

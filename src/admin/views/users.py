@@ -21,25 +21,28 @@ class UserModelView(BaseModelView):
     column_labels = {
         "id": "ID",
         "date_created": "Created",
+        "date_updated": "Updated",
         "username": "Username",
         "password": "Password",
-        "name": "Name of User",
-        "surname": "Surname of User",
+        "name": "First Name",
+        "surname": "Last Name",
         "role": "Role",
     }
     column_descriptions = {
         "id": "User ID",
         "date_created": "The date the user was created",
         "username": "The username of the user",
-        "name": "Name of the user",
-        "surname": "Surname of the user",
+        "name": "Firsr Name",
+        "surname": "Last Name",
         "password": "The password of the user",
         "role": "The role of the user",
     }
     column_choices = {
         "role": [
-            ("admin", "Super User"),
-            ("user", "Basic User"),
+            ("SUPERUSER", "Superuser"),
+            ("ADMIN", "Admin"),
+            ("USER", "User"),
+            ("BLOCKED", "Blocked"),
         ]
     }
     column_details_list = [
@@ -51,7 +54,12 @@ class UserModelView(BaseModelView):
         "surname",
         "role",
     ]
+    form_excluded_columns = [
+        "date_created",
+        "date_updated",
+        "password",
+    ]
     can_view_details = True
     details_modal = True
-    can_edit = False
-    can_create = False
+    can_edit = True
+    can_create = True
