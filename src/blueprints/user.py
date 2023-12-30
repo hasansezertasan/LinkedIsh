@@ -3,6 +3,7 @@ from flask_login import current_user, login_required, login_user, logout_user
 
 from database.engine import LocalSession
 from database.models import User
+from database.types import UserRole
 from src.forms.user import ChangePasswordForm, EditProfileForm, LoginForm, RegisterForm
 
 blueprint = Blueprint("user", __name__)
@@ -11,7 +12,7 @@ blueprint = Blueprint("user", __name__)
 @blueprint.route("/login", endpoint="login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        if current_user.role == "admin":
+        if current_user.role == UserRole.SUPERUSER:
             return redirect(url_for("admin.index"))
         return redirect(url_for("home.index"))
     form = LoginForm()
@@ -22,7 +23,7 @@ def login():
             user = db.query(User).filter_by(username=username).first()
             if user and user.verify_password(password):
                 login_user(user)
-                if user.role == "admin":
+                if user.role == UserRole.SUPERUSER:
                     return redirect(url_for("admin.index"))
                 return redirect(url_for("home.index"))
             else:
@@ -34,7 +35,7 @@ def login():
 def register():
     # Eğer bir kullanıcı giriş yaptığı halde register endpointini ziyaret ederse, o kullanıcıyı gerekli sayfalara yönlendiriyoruz.
     if current_user.is_authenticated:
-        if current_user.role == "admin":
+        if current_user.role == UserRole.SUPERUSER:
             return redirect(url_for("admin.index"))
         return redirect(url_for("home.index"))
 
