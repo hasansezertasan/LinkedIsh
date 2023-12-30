@@ -1,0 +1,46 @@
+{% extends 'home/base.html' %}
+{% block header %}
+
+<title>LinkedIsh | Bilgileri Düzenle</title>
+
+{% endblock header %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="alert alert-danger" role="alert">{{error}}</div>
+{% endif %}
+
+<h1 class="text-danger mb-3">Bilgileri Düzenle</h1>
+<form action="/user/edit" method="post">
+  {{ form.hidden_tag() }}
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="name">{{form.name.label}}</label>
+    </div>
+    {{form.name(size=32, class="form-control", placeholder="Adınızı giriniz.")}}
+  </div>
+
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="surname">{{form.surname.label}}</label>
+    </div>
+    {{form.surname(size=32, class="form-control", placeholder="Soy adınızı giriniz.")}}
+  </div>
+
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="email">{{form.email.label}}</label>
+    </div>
+    {{form.email(size=32, class="form-control", placeholder="Email Adresinizi Girin.")}}
+  </div>
+
+  <div class="my-5">
+    {{ form.submit(class_="btn btn-lg btn-dark btn-block form-control") }}
+  </div>
+</form>
+
+<a href="/user/password/change" class="btn btn-lg btn-dark btn-block form-control">Parola Değiştir</a>
+<a href="/user/logout" class="btn btn-lg btn-danger btn-block form-control my-5">Çıkış yap</a>
+
+{% endblock content %}

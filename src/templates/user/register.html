@@ -1,0 +1,75 @@
+{% extends 'home/base.html' %}
+{% block header %}
+
+<title>LinkedIsh | Kayıt Ol</title>
+
+{% endblock header %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="alert alert-danger" role="alert">{{error}}</div>
+{% endif %}
+
+<h1 class="text-danger mb-3">Kayıt Ol</h1>
+<form action="register" method="post">
+  {{ form.hidden_tag() }}
+  <div class="input-group form-group mb-3">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="username">{{form.username.label}}</label>
+    </div>
+    {{form.username(size=32, class="form-control", placeholder="Kullanıcı adınızı girin.")}}
+  </div>
+
+  <div class="input-group form-group my-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="password">{{form.password.label}}</label>
+    </div>
+    {{form.password(size=32, class="form-control", placeholder="Parola girin")}}
+    <i class="bi bi-eye-slash input-group-text" data-target="{{form.password.id}}"></i>
+  </div>
+
+  <div class="input-group form-group my-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="password_again">{{form.password_again.label}}</label>
+    </div>
+    {{form.password_again(size=32, class="form-control", placeholder="Parolanızı Tekrar Girin")}}
+    <i class="bi bi-eye-slash input-group-text" data-target="{{form.password_again.id}}"></i>
+  </div>
+
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="name">{{form.name.label}}</label>
+    </div>
+    {{form.name(size=32, class="form-control", placeholder="Adınızı giriniz.")}}
+  </div>
+
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="surname">{{form.surname.label}}</label>
+    </div>
+    {{form.surname(size=32, class="form-control", placeholder="Soy adınızı giriniz.")}}
+  </div>
+
+  <div class="input-group form-group mb-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="email">{{form.email.label}}</label>
+    </div>
+    {{form.email(size=32, class="form-control", placeholder="Email Adresinizi Girin.")}}
+  </div>
+
+  <div class="my-5">{{ form.submit(class_="btn btn-lg btn-dark btn-block form-control") }}</div>
+</form>
+
+{% endblock content %}
+
+{% block script %}
+
+<script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+<script>
+  // Run processElement function for the document
+  window.addEventListener('DOMContentLoaded', processElement);
+  // window.onload = processElement;
+</script>
+
+{% endblock script %}

@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+{% block header %}
+
+<title>LinkedIsh | Giriş Yap</title>
+
+{% endblock header %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="alert alert-danger" role="alert">{{error}}</div>
+{% endif %}
+
+<h1 class="text-danger mb-3">Giriş Yap</h1>
+<form action="login" method="post">
+  {{ form.hidden_tag() }}
+  <div class="input-group form-group mb-3">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="username">{{form.username.label}}</label>
+    </div>
+    {{form.username(size=32, class="form-control", placeholder="Kullanıcı adınızı girin.")}}
+  </div>
+
+  <div class="input-group form-group my-5">
+    <div class="input-group-prepend col-2">
+      <label class="input-group-text" for="password">{{form.password.label}}</label>
+    </div>
+    {{form.password(size=32, class="form-control", placeholder="Parola girin")}}
+    <i class="bi bi-eye-slash input-group-text" data-target="{{form.password.id}}"></i>
+  </div>
+
+  <div class="my-5">
+    {{ form.submit(class_="btn btn-lg btn-dark btn-block form-control") }}
+  </div>
+</form>
+
+{% endblock content %}
+
+{% block script %}
+
+<script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+<script>
+  // Run processElement function for the document
+  window.addEventListener('DOMContentLoaded', processElement);
+  // window.onload = processElement;
+</script>
+
+{% endblock script %}

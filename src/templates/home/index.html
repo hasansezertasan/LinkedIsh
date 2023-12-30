@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+{% block header %}
+
+<title>Application | Home</title>
+
+{% endblock header %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="alert alert-danger" role="alert">{{error}}</div>
+{% endif %}
+
+<h1 class="text-danger mb-3">Application</h1>
+
+{% endblock content %}
