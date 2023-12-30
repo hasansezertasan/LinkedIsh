@@ -1,16 +1,16 @@
-from sqlalchemy import Column, Enum, String
+from sqlalchemy.orm import Mapped
 
 from database.types import FeedbackCategory
 
+from ..annotations import String64, String2048
 from .mixins import TablePlainBase
 
 
 class Feedback(TablePlainBase):
     __tablename__ = "feedbacks"
-    # ! user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    subject = Column(String(50), nullable=False)
-    content = Column(String(1500), nullable=False)
-    category = Column(Enum(FeedbackCategory), nullable=False)
+    subject: Mapped[String64]
+    content: Mapped[String2048]
+    category: Mapped[FeedbackCategory]
 
     def __repr__(self):
         return self.subject

@@ -1,19 +1,22 @@
 from flask_login import UserMixin
-from sqlalchemy import Column, Enum, String, event
+from sqlalchemy import event
+from sqlalchemy.orm import Mapped, mapped_column
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from ..annotations import EmailAddress, String128
+from ..types import UserRole
 from .mixins import TablePlainBase
 
 
 class User(TablePlainBase, UserMixin):
     __tablename__ = "users"
-    username = Column(String(100), nullable=False, unique=True)
-    password = Column(String(100), nullable=False)
-    name = Column(String(100), nullable=False)
-    surname = Column(String(100), nullable=False)
+    username: Mapped[String128] = mapped_column(unique=True)
+    password: Mapped[String128]
+    name: Mapped[String128]
+    surname: Mapped[String128]
 
-    email = Column(String(100), nullable=False, unique=True)
-    role = Column(Enum("user", "admin"), default="user")
+    email: Mapped[EmailAddress] = mapped_column(unique=True)
+    role: Mapped[UserRole] = mapped_column(default=UserRole.USER)
 
     def __repr__(self):
         return self.username

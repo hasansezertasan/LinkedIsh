@@ -1,15 +1,16 @@
-from sqlalchemy import Column, ForeignKey, Integer, String, event
-from sqlalchemy.orm import relationship
+from sqlalchemy import ForeignKey, event
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from database.engine import LocalSession
 
+from ..annotations import String256
 from .mixins import TablePlainBase
 
 
 class Country(TablePlainBase):
     __tablename__ = "countries"
-    name = Column(String(255), nullable=False, unique=True)
-    cities = relationship("City", back_populates="country", lazy=False)
+    name: Mapped[String256] = mapped_column(unique=True)
+    cities: Mapped["City"] = relationship(back_populates="country")
 
     def __repr__(self):
         return self.name
@@ -17,9 +18,9 @@ class Country(TablePlainBase):
 
 class City(TablePlainBase):
     __tablename__ = "cities"
-    name = Column(String(255), nullable=False)
-    country_id = Column(Integer, ForeignKey("countries.id"))
-    country = relationship("Country", back_populates="cities", lazy=True)
+    name: Mapped[String256] = mapped_column(unique=True)
+    country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"))
+    country: Mapped["Country"] = relationship(back_populates="cities")
 
     def __repr__(self):
         return self.name

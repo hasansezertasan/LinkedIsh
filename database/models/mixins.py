@@ -1,22 +1,22 @@
 import datetime
 
-from sqlalchemy import Column, DateTime, Integer
+from sqlalchemy.orm import Mapped, mapped_column
 
 from database.engine import Base
 
 
 class TablePlainBase(Base):
     __abstract__ = True
-    id = Column(
-        Integer,
+    id: Mapped[int] = mapped_column(
         primary_key=True,
         autoincrement=True,
         index=True,
-        nullable=False,
         unique=True,
     )
-    date_created = Column(DateTime, default=datetime.datetime.utcnow)
-    date_updated = Column(DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+    date_created: Mapped[datetime.datetime] = mapped_column(default=datetime.datetime.utcnow)
+    date_updated: Mapped[datetime.datetime] = mapped_column(
+        default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow
+    )
 
     def __repr__(self):
         return self.id

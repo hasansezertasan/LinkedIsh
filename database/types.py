@@ -1,7 +1,7 @@
 import enum
 
 
-class AnnouncementCategory(enum.Enum):
+class AnnouncementCategory(str, enum.Enum):
     event = "Event"
     announcement = "Announcement"
     urgent = "Urgent"
@@ -10,7 +10,14 @@ class AnnouncementCategory(enum.Enum):
     other = "Other"
 
 
-class FeedbackCategory(enum.Enum):
+class FeedbackCategory(str, enum.Enum):
     bug = "Bug"
     suggestion = "Suggestion"
     other = "Other"
+
+
+class UserRole(str, enum.Enum):
+    BLOCKED = "BLOCKED"
+    USER = "USER"
+    ADMIN = "ADMIN"
+    SUPERUSER = "SUPERUSER"
