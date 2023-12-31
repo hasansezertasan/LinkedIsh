@@ -2,7 +2,8 @@ import os
 
 import typer
 
-from database.engine import Base, LocalSession, sync_engine
+from database.base import Base
+from database.engine import LocalSession, sync_engine
 from database.models import (
     Announcement,
     City,
