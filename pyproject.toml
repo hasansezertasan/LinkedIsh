@@ -42,9 +42,6 @@ Flask-Admin = "1.6.1"
 Flask-WTF = "1.2.1"
 Flask-Login = "0.6.3"
 
-adminui = "^1.5.1"
-fastapi-amis-admin = "^0.7.0"
-
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.25.1"
 isort = "^5.13.2"
