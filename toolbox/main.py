@@ -31,7 +31,7 @@ def create_database():
     Usage:
         python toolbox create-database
     """
-    Base.metadata.create_all(sync_engine)
+    Base.metadata.create_all(bind=sync_engine)
 
 
 @app.command(help="Create Admin")
