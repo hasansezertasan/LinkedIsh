@@ -18,6 +18,13 @@ You can also create a job post and hire people for your projects. You can bid on
   - [ ] Google
   - [ ] Github
 
+### TODO
+
+- [ ] Dockerize the project
+- [ ] Add Tests
+- [ ] Add CI/CD
+- [ ] Add a frontend
+
 ### Experimenting with different technologies
 
 I want to try these technologies in this project:
