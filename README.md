@@ -33,6 +33,8 @@ I want to try these technologies in this project:
   - [FastUI]
   - [AdminUI]
 
+> The main goal is to have a good understanding of these technologies and their pros and cons.
+
 <!-- Project Links -->
 [Flask App Builder]: https://github.com/dpgaspar/Flask-AppBuilder
 [Flask Admin]: https://github.com/flask-admin/flask-admin
