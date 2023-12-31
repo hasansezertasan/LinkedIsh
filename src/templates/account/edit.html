@@ -12,7 +12,7 @@
 {% endif %}
 
 <h1 class="text-danger mb-3">Bilgileri Düzenle</h1>
-<form action="/user/edit" method="post">
+<form action="/account/edit" method="post">
   {{ form.hidden_tag() }}
   <div class="input-group form-group mb-5">
     <div class="input-group-prepend col-2">
@@ -40,7 +40,7 @@
   </div>
 </form>
 
-<a href="/user/password/change" class="btn btn-lg btn-dark btn-block form-control">Parola Değiştir</a>
-<a href="/user/logout" class="btn btn-lg btn-danger btn-block form-control my-5">Çıkış yap</a>
+<a href="/account/password/change" class="btn btn-lg btn-dark btn-block form-control">Parola Değiştir</a>
+<a href="/account/logout" class="btn btn-lg btn-danger btn-block form-control my-5">Çıkış yap</a>
 
 {% endblock content %}

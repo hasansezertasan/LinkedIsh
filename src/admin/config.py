@@ -76,7 +76,7 @@ admin.add_view(
         session=LocalSession(),
         name="Schools",
         category="Educations",
-        endpoint="schools",
+        endpoint="school",
     )
 )
 admin.add_view(
@@ -85,7 +85,7 @@ admin.add_view(
         session=LocalSession(),
         name="Departments",
         category="Educations",
-        endpoint="departments",
+        endpoint="department",
     )
 )
 admin.add_view(
@@ -94,7 +94,7 @@ admin.add_view(
         session=LocalSession(),
         name="Companies",
         category="Experiences",
-        endpoint="companies",
+        endpoint="company",
     )
 )
 admin.add_view(
@@ -103,7 +103,7 @@ admin.add_view(
         session=LocalSession(),
         name="Positions",
         category="Experiences",
-        endpoint="positions",
+        endpoint="position",
     )
 )
 admin.add_view(
@@ -112,7 +112,7 @@ admin.add_view(
         session=LocalSession(),
         name="Countries",
         category="Locations",
-        endpoint="countries",
+        endpoint="country",
     )
 )
 admin.add_view(
@@ -121,7 +121,7 @@ admin.add_view(
         session=LocalSession(),
         name="Cities",
         category="Locations",
-        endpoint="cities",
+        endpoint="city",
     )
 )
 admin.add_view(
@@ -130,7 +130,7 @@ admin.add_view(
         session=LocalSession(),
         name="Languages",
         category="Languages",
-        endpoint="languages",
+        endpoint="language",
     )
 )
 admin.add_view(
@@ -139,7 +139,7 @@ admin.add_view(
         session=LocalSession(),
         name="Skills",
         category="Skills",
-        endpoint="skills",
+        endpoint="skill",
     )
 )
 admin.add_view(
@@ -148,7 +148,7 @@ admin.add_view(
         session=LocalSession(),
         name="Audiences",
         category="Audiences",
-        endpoint="audiences",
+        endpoint="audience",
     )
 )
 admin.add_view(
@@ -157,7 +157,7 @@ admin.add_view(
         session=LocalSession(),
         name="Announcements",
         category="Announcements",
-        endpoint="announcements",
+        endpoint="announcement",
     )
 )
 admin.add_view(
@@ -166,7 +166,7 @@ admin.add_view(
         session=LocalSession(),
         name="Feedbacks",
         category="Feedbacks",
-        endpoint="feedbacks",
+        endpoint="feedback",
     )
 )
 admin.add_view(
@@ -174,6 +174,6 @@ admin.add_view(
         model=User,
         session=LocalSession(),
         name="Users",
-        endpoint="users",
+        endpoint="user",
     )
 )

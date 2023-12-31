@@ -12,8 +12,8 @@ def index():
 
 
 @blueprint.route(
-    rule="/about",
-    endpoint="about",
+    rule="/ping",
+    endpoint="ping",
     methods=["GET", "POST"],
 )
 def ping():

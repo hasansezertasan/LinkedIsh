@@ -6,7 +6,7 @@ from database.models import User
 from database.types import UserRole
 from src.forms.user import ChangePasswordForm, EditProfileForm, LoginForm, RegisterForm
 
-blueprint = Blueprint("user", __name__)
+blueprint = Blueprint("account", __name__)
 
 
 @blueprint.route("/login", endpoint="login", methods=["GET", "POST"])
@@ -27,8 +27,8 @@ def login():
                     return redirect(url_for("admin.index"))
                 return redirect(url_for("home.index"))
             else:
-                return render_template("user/login.html", form=form, error="Invalid username or password.")
-    return render_template("user/login.html", form=form)
+                return render_template("account/login.html", form=form, error="Invalid username or password.")
+    return render_template("account/login.html", form=form)
 
 
 @blueprint.route(rule="/register", endpoint="register", methods=["GET", "POST"])
@@ -49,7 +49,7 @@ def register():
         with LocalSession() as db:
             found = db.query(User).filter_by(username=username).first()
             if found:
-                return render_template("user/register.html", form=form, error="Username already exists.")
+                return render_template("account/register.html", form=form, error="Username already exists.")
 
             user = User(
                 username=username,
@@ -61,18 +61,18 @@ def register():
             db.add(user)
             db.commit()
             return render_template(
-                "user/register.html",
+                "account/register.html",
                 form=form,
                 error="Thank you for registering. Please login.",
             )
-    return render_template("user/register.html", form=form)
+    return render_template("account/register.html", form=form)
 
 
 @blueprint.get(rule="/logout", endpoint="logout")
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("user.login"))
+    return redirect(url_for("account.login"))
 
 
 @blueprint.route(rule="/edit", endpoint="edit", methods=["GET", "POST"])
@@ -87,9 +87,9 @@ def edit():
                 current_user.surname = form.surname.data
                 current_user.email = form.email.data
                 db.commit()
-                return render_template("user/edit.html", form=form, error="Profile updated.")
-            return render_template("user/edit.html", form=form, error="User not found.")
-    return render_template("user/edit.html", form=form)
+                return render_template("account/edit.html", form=form, error="Profile updated.")
+            return render_template("account/edit.html", form=form, error="User not found.")
+    return render_template("account/edit.html", form=form)
 
 
 @blueprint.route(
@@ -103,7 +103,7 @@ def password_change():
     if request.method == "POST" and form.validate_on_submit():
         if form.new_password.data != form.new_password_again.data:
             return render_template(
-                "user/password-change.html",
+                "account/password-change.html",
                 form=form,
                 error="New passwords do not match.",
             )
@@ -112,9 +112,9 @@ def password_change():
             if user and user.verify_password(form.password.data):
                 current_user.password = form.new_password.data
                 db.commit()
-                return redirect(url_for("user.logout"))
-            return render_template("user/password-change.html", form=form, error="Invalid password.")
-    return render_template("user/password-change.html", form=form)
+                return redirect(url_for("account.logout"))
+            return render_template("account/password-change.html", form=form, error="Invalid password.")
+    return render_template("account/password-change.html", form=form)
 
 
 # blueprint.add_url_rule(rule='/password/reset', endpoint='password_reset', view_func=password_reset, methods=['GET', 'POST'])
