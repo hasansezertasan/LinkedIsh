@@ -10,7 +10,7 @@ exclude = ["**"]
 packages = [{ include = "toolbox" }]
 
 [tool.poetry.scripts]
-toolbox = { callable = "toolbox.main:app", extras = ["console"] }
+toolbox = { callable = "toolbox.main:app"}
 
 
 [tool.poetry.dependencies]
