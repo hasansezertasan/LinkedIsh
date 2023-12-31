@@ -11,7 +11,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class User(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin, UserMixin):
-    __tablename__ = "users"
+    __tablename__ = "user"
     username: Mapped[String128] = mapped_column(unique=True)
     password: Mapped[String128]
     name: Mapped[String128]

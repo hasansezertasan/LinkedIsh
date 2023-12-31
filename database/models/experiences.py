@@ -7,7 +7,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class Company(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "companies"
+    __tablename__ = "company"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):
@@ -15,7 +15,7 @@ class Company(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
 
 
 class Position(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "positions"
+    __tablename__ = "position"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):

@@ -7,7 +7,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class Language(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "languages"
+    __tablename__ = "language"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):

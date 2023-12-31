@@ -7,7 +7,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class Audience(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "audiences"
+    __tablename__ = "audience"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):

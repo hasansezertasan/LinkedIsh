@@ -8,7 +8,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class Feedback(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "feedbacks"
+    __tablename__ = "feedback"
     subject: Mapped[String64]
     content: Mapped[String2048]
     category: Mapped[FeedbackCategory]

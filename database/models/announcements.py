@@ -8,7 +8,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
 class Announcement(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "announcements"
+    __tablename__ = "announcement"
     title: Mapped[String64]
     content: Mapped[String1024]
     category: Mapped[AnnouncementCategory]
