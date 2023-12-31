@@ -1,12 +1,13 @@
 from sqlalchemy.orm import Mapped
 
+from database.base import Base
 from database.types import AnnouncementCategory
 
 from ..annotations import URL, String64, String1024
 from .mixins import TablePlainBase
 
 
-class Announcement(TablePlainBase):
+class Announcement(Base, TablePlainBase):
     __tablename__ = "announcements"
     title: Mapped[String64]
     content: Mapped[String1024]

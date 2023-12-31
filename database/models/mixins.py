@@ -2,10 +2,8 @@ import datetime
 
 from sqlalchemy.orm import Mapped, mapped_column
 
-from database.engine import Base
 
-
-class TablePlainBase(Base):
+class TablePlainBase:
     __abstract__ = True
     id: Mapped[int] = mapped_column(
         primary_key=True,

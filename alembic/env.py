@@ -20,7 +20,7 @@ config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-from database.engine import Base
+from database.base import Base
 
 # add your model's MetaData object here
 # for 'autogenerate' support

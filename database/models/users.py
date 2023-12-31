@@ -3,12 +3,14 @@ from sqlalchemy import event
 from sqlalchemy.orm import Mapped, mapped_column
 from werkzeug.security import check_password_hash, generate_password_hash
 
+from database.base import Base
+
 from ..annotations import EmailAddress, String128
 from ..types import UserRole
 from .mixins import TablePlainBase
 
 
-class User(TablePlainBase, UserMixin):
+class User(Base, TablePlainBase, UserMixin):
     __tablename__ = "users"
     username: Mapped[String128] = mapped_column(unique=True)
     password: Mapped[String128]
