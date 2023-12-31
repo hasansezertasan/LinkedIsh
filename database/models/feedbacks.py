@@ -4,10 +4,10 @@ from database.base import Base
 from database.types import FeedbackCategory
 
 from ..annotations import String64, String2048
-from .mixins import TablePlainBase
+from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
-class Feedback(Base, TablePlainBase):
+class Feedback(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "feedbacks"
     subject: Mapped[String64]
     content: Mapped[String2048]

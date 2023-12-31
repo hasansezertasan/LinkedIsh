@@ -4,10 +4,10 @@ from database.base import Base
 from database.types import AnnouncementCategory
 
 from ..annotations import URL, String64, String1024
-from .mixins import TablePlainBase
+from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
-class Announcement(Base, TablePlainBase):
+class Announcement(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "announcements"
     title: Mapped[String64]
     content: Mapped[String1024]

@@ -5,10 +5,10 @@ from database.base import Base
 from database.engine import LocalSession
 
 from ..annotations import String256
-from .mixins import TablePlainBase
+from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
-class Country(Base, TablePlainBase):
+class Country(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "countries"
     name: Mapped[String256] = mapped_column(unique=True)
     cities: Mapped["City"] = relationship(back_populates="country")
@@ -17,7 +17,7 @@ class Country(Base, TablePlainBase):
         return self.name
 
 
-class City(Base, TablePlainBase):
+class City(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "cities"
     name: Mapped[String256] = mapped_column(unique=True)
     country_id: Mapped[int] = mapped_column(ForeignKey("countries.id"))

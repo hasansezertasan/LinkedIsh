@@ -3,10 +3,10 @@ from sqlalchemy.orm import Mapped, mapped_column
 from database.base import Base
 
 from ..annotations import String256
-from .mixins import TablePlainBase
+from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
-class Company(Base, TablePlainBase):
+class Company(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "companies"
     name: Mapped[String256] = mapped_column(unique=True)
 
@@ -14,7 +14,7 @@ class Company(Base, TablePlainBase):
         return self.name
 
 
-class Position(Base, TablePlainBase):
+class Position(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "positions"
     name: Mapped[String256] = mapped_column(unique=True)
 

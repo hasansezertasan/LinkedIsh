@@ -7,10 +7,10 @@ from database.base import Base
 
 from ..annotations import EmailAddress, String128
 from ..types import UserRole
-from .mixins import TablePlainBase
+from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 
 
-class User(Base, TablePlainBase, UserMixin):
+class User(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin, UserMixin):
     __tablename__ = "users"
     username: Mapped[String128] = mapped_column(unique=True)
     password: Mapped[String128]
