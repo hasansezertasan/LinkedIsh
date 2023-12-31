@@ -20,12 +20,13 @@ config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-from database.base import Base
 
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+# ! Custom Start
+from database.base import Base
 from database.models import (
     Announcement,
     City,
@@ -40,6 +41,7 @@ from database.models import (
     User,
 )
 target_metadata = Base.metadata
+# ! Custom End
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
