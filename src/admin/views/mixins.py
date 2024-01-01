@@ -12,4 +12,4 @@ class BaseModelView(ModelView):
         return current_user.is_authenticated and current_user.role == UserRole.SUPERUSER
 
     def inaccessible_callback(self, name, **kwargs):
-        return redirect(url_for("user.login"))
+        return redirect(url_for("account.login"))
