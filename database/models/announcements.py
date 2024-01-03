@@ -4,15 +4,15 @@ from database.base import Base
 from database.types import AnnouncementCategory
 
 from ..annotations import URL, String64, String1024
-from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
+from .mixins import UserCRUDMixin
 
 
-class Announcement(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+class Announcement(Base, UserCRUDMixin):
     __tablename__ = "announcement"
     title: Mapped[String64]
     content: Mapped[String1024]
     category: Mapped[AnnouncementCategory]
-    url: Mapped[URL]
+    url: Mapped[URL | None]
 
     def __repr__(self):
         return self.title

@@ -11,7 +11,7 @@ from .mixins import DateCreatedMixin, DateUpdatedMixin, IDMixin
 class Country(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "country"
     name: Mapped[String256] = mapped_column(unique=True)
-    cities: Mapped["City"] = relationship(back_populates="country")
+    cities: Mapped[list["City"]] = relationship(back_populates="country")
 
     def __repr__(self):
         return self.name
@@ -19,7 +19,7 @@ class Country(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
 
 class City(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "city"
-    name: Mapped[String256] = mapped_column(unique=True)
+    name: Mapped[String256]
     country_id: Mapped[int] = mapped_column(ForeignKey("country.id"))
     country: Mapped["Country"] = relationship(back_populates="cities")
 

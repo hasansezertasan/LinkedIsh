@@ -1,4 +1,4 @@
-from database.models import Department, School
+from database.models import School, SchoolDepartment
 from src.admin.views.mixins import BaseModelView
 
 
@@ -41,36 +41,36 @@ class SchoolModelView(BaseModelView):
     page_size = 50
 
 
-class DepartmentModelView(BaseModelView):
+class SchoolDepartmentModelView(BaseModelView):
     column_list = [
-        Department.id,
-        Department.date_created,
-        Department.date_updated,
-        Department.name,
+        SchoolDepartment.id,
+        SchoolDepartment.date_created,
+        SchoolDepartment.date_updated,
+        SchoolDepartment.name,
     ]
     column_labels = {
-        Department.id: "ID",
-        Department.date_created: "Date Created",
-        Department.date_updated: "Date Updated",
-        Department.name: "Name",
+        SchoolDepartment.id: "ID",
+        SchoolDepartment.date_created: "Date Created",
+        SchoolDepartment.date_updated: "Date Updated",
+        SchoolDepartment.name: "Name",
     }
     column_searchable_list = [
-        Department.name,
+        SchoolDepartment.name,
     ]
     column_sortable_list = [
-        Department.id,
-        Department.date_created,
-        Department.date_updated,
-        Department.name,
+        SchoolDepartment.id,
+        SchoolDepartment.date_created,
+        SchoolDepartment.date_updated,
+        SchoolDepartment.name,
     ]
     column_filters = [
-        Department.id,
-        Department.date_created,
-        Department.date_updated,
-        Department.name,
+        SchoolDepartment.id,
+        SchoolDepartment.date_created,
+        SchoolDepartment.date_updated,
+        SchoolDepartment.name,
     ]
     form_columns = [
-        Department.name,
+        SchoolDepartment.name,
     ]
     can_view_details = True
     details_modal = True

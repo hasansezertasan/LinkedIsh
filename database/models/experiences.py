@@ -14,8 +14,8 @@ class Company(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
         return self.name
 
 
-class Position(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "position"
+class CompanyDepartment(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+    __tablename__ = "company__department"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):

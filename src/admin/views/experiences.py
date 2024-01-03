@@ -1,4 +1,4 @@
-from database.models import Company, Position
+from database.models import Company, CompanyDepartment
 from src.admin.views.mixins import BaseModelView
 
 
@@ -41,36 +41,36 @@ class CompanyModelView(BaseModelView):
     page_size = 50
 
 
-class PositionModelView(BaseModelView):
+class CompanyDepartmentModelView(BaseModelView):
     column_list = [
-        Position.id,
-        Position.date_created,
-        Position.date_updated,
-        Position.name,
+        CompanyDepartment.id,
+        CompanyDepartment.date_created,
+        CompanyDepartment.date_updated,
+        CompanyDepartment.name,
     ]
     column_labels = {
-        Position.id: "ID",
-        Position.date_created: "Date Created",
-        Position.date_updated: "Date Updated",
-        Position.name: "Name",
+        CompanyDepartment.id: "ID",
+        CompanyDepartment.date_created: "Date Created",
+        CompanyDepartment.date_updated: "Date Updated",
+        CompanyDepartment.name: "Name",
     }
     column_searchable_list = [
-        Position.name,
+        CompanyDepartment.name,
     ]
     column_sortable_list = [
-        Position.id,
-        Position.date_created,
-        Position.date_updated,
-        Position.name,
+        CompanyDepartment.id,
+        CompanyDepartment.date_created,
+        CompanyDepartment.date_updated,
+        CompanyDepartment.name,
     ]
     column_filters = [
-        Position.id,
-        Position.date_created,
-        Position.date_updated,
-        Position.name,
+        CompanyDepartment.id,
+        CompanyDepartment.date_created,
+        CompanyDepartment.date_updated,
+        CompanyDepartment.name,
     ]
     form_columns = [
-        Position.name,
+        CompanyDepartment.name,
     ]
     can_view_details = True
     details_modal = True

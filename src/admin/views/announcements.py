@@ -1,4 +1,4 @@
-from wtforms import TextAreaField
+from wtforms import TextAreaField, URLField
 
 from database.models import Announcement
 from src.admin.views.mixins import BaseModelView
@@ -49,6 +49,7 @@ class AnnouncementModelView(BaseModelView):
     }
     form_overrides = dict(
         content=TextAreaField,
+        url=URLField,
     )
     can_view_details = True
     details_modal = True

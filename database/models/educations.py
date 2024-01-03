@@ -14,7 +14,7 @@ class School(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
         return self.name
 
 
-class Department(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+class SchoolDepartment(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     __tablename__ = "department"
     name: Mapped[String256] = mapped_column(unique=True)
 

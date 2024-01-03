@@ -8,14 +8,13 @@ from database.models import (
     Audience,
     City,
     Company,
+    CompanyDepartment,
     Country,
-    Department,
     EmailTemplate,
     Feedback,
-    Language,
     MemberFeedback,
-    Position,
     School,
+    SchoolDepartment,
     Skill,
     User,
 )
@@ -25,16 +24,15 @@ from .views import (
     AnonymousFeedbackView,
     AudienceModelView,
     CityModelView,
+    CompanyDepartmentModelView,
     CompanyModelView,
     CountryModelView,
-    DepartmentModelView,
     EmailTemplateModelView,
     FeedbackModelView,
     IndexView,
-    LanguageModelView,
     MemberFeedbackView,
     PingView,
-    PositionModelView,
+    SchoolDepartmentModelView,
     SchoolModelView,
     SkillModelView,
     UserModelView,
@@ -81,12 +79,12 @@ admin.add_view(
     )
 )
 admin.add_view(
-    DepartmentModelView(
-        model=Department,
+    SchoolDepartmentModelView(
+        model=SchoolDepartment,
         session=LocalSession(),
         name="Departments",
         category="Educations",
-        endpoint="department",
+        endpoint="school-department",
     )
 )
 admin.add_view(
@@ -99,12 +97,12 @@ admin.add_view(
     )
 )
 admin.add_view(
-    PositionModelView(
-        model=Position,
+    CompanyDepartmentModelView(
+        model=CompanyDepartment,
         session=LocalSession(),
-        name="Positions",
+        name="Company Departments",
         category="Experiences",
-        endpoint="position",
+        endpoint="company-department",
     )
 )
 admin.add_view(
@@ -123,15 +121,6 @@ admin.add_view(
         name="Cities",
         category="Locations",
         endpoint="city",
-    )
-)
-admin.add_view(
-    LanguageModelView(
-        model=Language,
-        session=LocalSession(),
-        name="Languages",
-        category="Store",
-        endpoint="language",
     )
 )
 admin.add_view(
