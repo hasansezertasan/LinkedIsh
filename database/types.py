@@ -2,18 +2,23 @@ import enum
 
 
 class AnnouncementCategory(str, enum.Enum):
-    event = "Event"
-    announcement = "Announcement"
-    urgent = "Urgent"
-    important = "Important"
-    information = "Information"
-    other = "Other"
+    EVENT = "EVENT"
+    ANNOUNCEMENT = "ANNOUNCEMENT"
+    URGENT = "URGENT"
+    IMPORTANT = "IMPORTANT"
+    INFORMATION = "INFORMATION"
+    OTHER = "OTHER"
 
 
 class FeedbackCategory(str, enum.Enum):
-    bug = "Bug"
-    suggestion = "Suggestion"
-    other = "Other"
+    BUG = "BUG"
+    SUGGESTION = "SUGGESTION"
+    OTHER = "OTHER"
+
+
+class FeedbackType(str, enum.Enum):
+    MEMBER = "MEMBER"
+    ANONYMOUS = "ANONYMOUS"
 
 
 class UserRole(str, enum.Enum):
