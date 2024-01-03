@@ -4,6 +4,7 @@ from flask_admin.menu import MenuLink
 from database.engine import LocalSession
 from database.models import (
     Announcement,
+    AnonymousFeedback,
     Audience,
     City,
     Company,
@@ -12,6 +13,7 @@ from database.models import (
     EmailTemplate,
     Feedback,
     Language,
+    MemberFeedback,
     Position,
     School,
     Skill,
@@ -20,6 +22,7 @@ from database.models import (
 
 from .views import (
     AnnouncementModelView,
+    AnonymousFeedbackView,
     AudienceModelView,
     CityModelView,
     CompanyModelView,
@@ -29,6 +32,7 @@ from .views import (
     FeedbackModelView,
     IndexView,
     LanguageModelView,
+    MemberFeedbackView,
     PingView,
     PositionModelView,
     SchoolModelView,
@@ -164,6 +168,24 @@ admin.add_view(
         name="Feedbacks",
         category="Dynamic",
         endpoint="feedback",
+    )
+)
+admin.add_view(
+    MemberFeedbackView(
+        model=MemberFeedback,
+        session=LocalSession(),
+        name="Member Feedbacks",
+        category="Dynamic",
+        endpoint="member-feedback",
+    )
+)
+admin.add_view(
+    AnonymousFeedbackView(
+        model=AnonymousFeedback,
+        session=LocalSession(),
+        name="Anonymous Feedbacks",
+        category="Dynamic",
+        endpoint="anonymous-feedback",
     )
 )
 admin.add_view(
