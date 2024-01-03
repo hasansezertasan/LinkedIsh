@@ -1,0 +1,43 @@
+[
+    {
+        "country": "Türkiye",
+        "cities": [
+            "Ankara",
+            "İstanbul",
+            "İzmir",
+            "Antalya",
+            "Bursa",
+            "Muğla",
+            "Kayseri"
+        ]
+    },
+    {
+        "country": "United States",
+        "cities":[
+            "New York",
+            "Los Angeles",
+            "Chicago",
+            "Miami"
+        ]
+    },
+    {
+        "country": "United Kingdom",
+        "cities":[
+            "London",
+            "Liverpool",
+            "Leeds",
+            "Sheffield",
+            "Edinburgh",
+            "Bristol",
+            "Cambridge"
+        ]
+    },
+    {
+        "country": "Germany",
+        "cities":[
+            "Berlin",
+            "Hamburg",
+            "Munich"
+        ]
+    }
+]

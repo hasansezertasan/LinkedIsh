@@ -1,0 +1,38 @@
+[
+    {
+        "category": "BUG",
+        "subject": "Redirect to Admin Page when logged in",
+        "content": "When I login, I am redirected to the Admin Page, but I want to be redirected to the Home Page",
+        "username": "dineshchugtai"
+    },
+    {
+        "category": "OTHER",
+        "subject": "How to customize profile",
+        "content": "How to change Profile Picture?",
+        "username": "gilfoyle"
+    },
+    {
+        "category": "SUGGESTION",
+        "subject": "Dark Mode Request",
+        "content": "I love the platform! Can we have a dark mode option for a more comfortable viewing experience?",
+        "username": "hasansezertasan"
+    },
+    {
+        "category": "BUG",
+        "subject": "Incorrect Timestamps in Chat",
+        "content": "Noticing discrepancies in message timestamps. Messages seem out of order. Please investigate.",
+        "username": "richardhendricks"
+    },
+    {
+        "category": "SUGGESTION",
+        "subject": "Integration with Calendar Apps",
+        "content": "It would be great to sync platform events with external calendar apps. Any plans for this integration?",
+        "username": "gilfoyle"
+    },
+    {
+        "category": "OTHER",
+        "subject": "Export Chat History",
+        "content": "Is there a way to export chat history for archival purposes? It would be a helpful feature.",
+        "username": "gilfoyle"
+    }
+]

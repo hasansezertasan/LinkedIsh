@@ -1,0 +1,30 @@
+[
+    {
+        "title": "`requirements.txt` file added.",
+        "content": "A `requirements.txt` file has been added to the root of the project. This file contains all the dependencies required to run the project. This file is used by the `pip` package manager to install all the dependencies.",
+        "category": "ANNOUNCEMENT",
+        "url": null,
+        "username": "hasansezertasan"
+    },
+    {
+        "title": "Data IDs added.",
+        "content": "Data IDs have been added to the project. These are used to map the phone numbers and email addresses with IDs.",
+        "category": "ANNOUNCEMENT",
+        "url": null,
+        "username": "hasansezertasan"
+    },
+    {
+        "title": "Migrating from Flask-Login to Flask-JWT-Extended",
+        "content": "Flask-Login has been replaced with Flask-JWT-Extended. This change has been made to improve the security of the application.",
+        "category": "INFORMATION",
+        "url": null,
+        "username": "hasansezertasan"
+    },
+    {
+        "title": "FastAPI Türkiye Tanışma Etkinliği",
+        "content": "FastAPI Türkiye topluluğu olarak ilk tanışma etkinliğimizi 6 Haziran 2024 tarihinde gerçekleştiriyoruz. Etkinliğimize katılmak için [buraya](https://www.example.com/) tıklayabilirsiniz.",
+        "category": "EVENT",
+        "url": "https://www.example.com/",
+        "username": "hasansezertasan"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "username": "hasansezertasan",
+        "password": "hasansezertasan",
+        "first_name": "Hasan Sezer",
+        "last_name": "Taşan",
+        "phone": "+1 123 456 7890",
+        "email": "hasansezertasan@gmail.com",
+        "birth_date": "1999-06-19",
+        "role": "SUPERUSER"
+    },
+    {
+        "username": "richardhendricks",
+        "password": "richardhendricks",
+        "first_name": "richard",
+        "last_name": "hendricks",
+        "phone": "+1 123 456 7890",
+        "email": "richardhendricks@piedpiper.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "dineshchugtai",
+        "password": "dineshchugtai",
+        "first_name": "Dinesh",
+        "last_name": "Chugtai",
+        "phone": "+1 123 456 7890",
+        "email": "dineshchugtai@nothotdog.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "gilfoyle",
+        "password": "sonofanton",
+        "first_name": "Gilfoyle",
+        "last_name": "Bertram",
+        "phone": "+1 123 456 7890",
+        "email": "gilfoyle@bertram.xyz",
+        "birth_date": "1990-01-01",
+        "role": "BLOCKED"
+    }
+]

@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Python"
+    },
+    {
+        "name": "FastAPI"
+    },
+    {
+        "name": "Flask"
+    },
+    {
+        "name": "Django"
+    },
+    {
+        "name": "HTMX"
+    },
+    {
+        "name": "VueJS"
+    },
+    {
+        "name": "Docker"
+    },
+    {
+        "name": "Kubernetes"
+    },
+    {
+        "name": "JavaScript"
+    },
+    {
+        "name": "Selenium"
+    },
+    {
+        "name": "Playwright"
+    },
+    {
+        "name": "Web Scrpaing"
+    },
+    {
+        "name": "Web Automation"
+    },
+    {
+        "name": "Web Development"
+    },
+    {
+        "name": "Web Design"
+    },
+    {
+        "name": "Figma"
+    },
+    {
+        "name": "Lecturer"
+    }
+]

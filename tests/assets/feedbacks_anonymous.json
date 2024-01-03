@@ -1,0 +1,50 @@
+[
+    {
+        "category": "SUGGESTION",
+        "subject": "Add login with Google",
+        "content": "I think it would be great if you could login with Google",
+        "email": "anonymous1@example.com"
+    },
+    {
+        "category": "BUG",
+        "subject": "Add login with Github",
+        "content": "I think it would be great if you could login with Github",
+        "email": "anonymous2@example.com"
+    },
+    {
+        "category": "SUGGESTION",
+        "subject": "Add Dark Mode",
+        "content": "I think it would be great if you could add a Dark Mode option for better user experience during nighttime.",
+        "email": "anonymous3@example.com"
+    },
+    {
+        "category": "BUG",
+        "subject": "Incorrect Date Display",
+        "content": "I've noticed an issue with the date display on certain pages. It would be helpful to have this corrected for accurate information.",
+        "email": "anonymous4@example.com"
+    },
+    {
+        "category": "SUGGESTION",
+        "subject": "Implement Dark Mode",
+        "content": "It would be awesome if you could add a Dark Mode feature for better user experience.",
+        "email": "anonymous3@example.com"
+    },
+    {
+        "category": "BUG",
+        "subject": "Incorrect Display of Usernames",
+        "content": "I noticed a bug where usernames are not displayed correctly in certain sections of the application.",
+        "email": "anonymous4@example.com"
+    },
+    {
+        "category": "SUGGESTION",
+        "subject": "Enhance Search Functionality",
+        "content": "Consider improving the search functionality to make it more intuitive and efficient.",
+        "email": "anonymous5@example.com"
+    },
+    {
+        "category": "BUG",
+        "subject": "Unable to Upload Profile Picture",
+        "content": "Encountered a bug preventing me from uploading a new profile picture. Please investigate.",
+        "email": "anonymous6@example.com"
+    }
+]
