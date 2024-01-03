@@ -3,7 +3,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class CompanyModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Company.id,
         Company.date_created,
         Company.date_updated,
@@ -42,7 +42,7 @@ class CompanyModelView(BaseModelView):
 
 
 class PositionModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Position.id,
         Position.date_created,
         Position.date_updated,

@@ -3,7 +3,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class AudienceModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Audience.id,
         Audience.date_created,
         Audience.date_updated,

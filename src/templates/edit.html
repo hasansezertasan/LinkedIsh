@@ -1,0 +1,8 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block tail %}
+    {{ super() }}
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='text') }}
+    <!-- Direct copy from [flask-ckeditor/examples at master · helloflask/flask-ckeditor](https://github.com/helloflask/flask-ckeditor/tree/master/examples) -->
+{% endblock %}

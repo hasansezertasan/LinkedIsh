@@ -7,4 +7,5 @@ from .feedbacks import FeedbackModelView
 from .languages import LanguageModelView
 from .locations import CityModelView, CountryModelView
 from .skills import SkillModelView
+from .templates import EmailTemplateModelView
 from .users import UserModelView

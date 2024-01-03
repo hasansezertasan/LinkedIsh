@@ -5,7 +5,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class AnnouncementModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Announcement.id,
         Announcement.date_created,
         Announcement.date_updated,

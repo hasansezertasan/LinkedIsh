@@ -3,7 +3,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class SkillModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Skill.id,
         Skill.date_created,
         Skill.date_updated,

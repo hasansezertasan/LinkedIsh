@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_ckeditor import CKEditor
 from flask_login import LoginManager
 
 from database.base import Base
@@ -12,7 +13,7 @@ from src.driver import StorageManager  # noqa: F401
 app = Flask(__name__)
 app.config.update(config)
 login_manager = LoginManager()
-
+ckeditor = CKEditor(app)
 
 admin.init_app(app)
 login_manager.init_app(app)

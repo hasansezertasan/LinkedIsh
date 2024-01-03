@@ -9,6 +9,7 @@ from database.models import (
     Company,
     Country,
     Department,
+    EmailTemplate,
     Feedback,
     Language,
     Position,
@@ -24,6 +25,7 @@ from .views import (
     CompanyModelView,
     CountryModelView,
     DepartmentModelView,
+    EmailTemplateModelView,
     FeedbackModelView,
     IndexView,
     LanguageModelView,
@@ -42,13 +44,8 @@ admin = Admin(
 
 # Categories
 admin.add_category(name="Store")
-admin.add_category(name="Extra")
 admin.add_category(name="Dynamic")
-admin.add_sub_category(name="Feedbacks", parent_name="Dynamic")
-admin.add_sub_category(name="Audiences", parent_name="Store")
-admin.add_sub_category(name="Skills", parent_name="Store")
-admin.add_sub_category(name="Announcements", parent_name="Dynamic")
-admin.add_sub_category(name="Languages", parent_name="Store")
+admin.add_category(name="Extra")
 admin.add_sub_category(name="Locations", parent_name="Store")
 admin.add_sub_category(name="Experiences", parent_name="Store")
 admin.add_sub_category(name="Educations", parent_name="Store")
@@ -129,7 +126,7 @@ admin.add_view(
         model=Language,
         session=LocalSession(),
         name="Languages",
-        category="Languages",
+        category="Store",
         endpoint="language",
     )
 )
@@ -138,7 +135,7 @@ admin.add_view(
         model=Skill,
         session=LocalSession(),
         name="Skills",
-        category="Skills",
+        category="Store",
         endpoint="skill",
     )
 )
@@ -147,7 +144,7 @@ admin.add_view(
         model=Audience,
         session=LocalSession(),
         name="Audiences",
-        category="Audiences",
+        category="Store",
         endpoint="audience",
     )
 )
@@ -156,7 +153,7 @@ admin.add_view(
         model=Announcement,
         session=LocalSession(),
         name="Announcements",
-        category="Announcements",
+        category="Dynamic",
         endpoint="announcement",
     )
 )
@@ -165,8 +162,17 @@ admin.add_view(
         model=Feedback,
         session=LocalSession(),
         name="Feedbacks",
-        category="Feedbacks",
+        category="Dynamic",
         endpoint="feedback",
+    )
+)
+admin.add_view(
+    EmailTemplateModelView(
+        model=EmailTemplate,
+        session=LocalSession(),
+        name="Email Templates",
+        category="Store",
+        endpoint="email-template",
     )
 )
 admin.add_view(

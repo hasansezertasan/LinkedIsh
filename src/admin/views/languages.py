@@ -3,7 +3,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class LanguageModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Language.id,
         Language.date_created,
         Language.date_updated,

@@ -5,7 +5,7 @@ from src.admin.views.mixins import BaseModelView
 
 
 class FeedbackModelView(BaseModelView):
-    columns_list = [
+    column_list = [
         Feedback.id,
         Feedback.date_created,
         Feedback.date_updated,

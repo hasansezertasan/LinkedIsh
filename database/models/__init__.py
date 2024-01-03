@@ -6,4 +6,5 @@ from .feedbacks import Feedback
 from .languages import Language
 from .locations import City, Country
 from .skills import Skill
+from .templates import EmailTemplate
 from .users import User
