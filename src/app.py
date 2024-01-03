@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, session
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager
@@ -7,7 +7,7 @@ from database.base import Base
 from database.engine import LocalSession, sync_engine
 from database.models import User
 from src import blueprints
-from src.admin.config import admin
+from src.admin.blueprint import admin
 from src.config import config
 from src.driver import StorageManager  # noqa: F401
 
