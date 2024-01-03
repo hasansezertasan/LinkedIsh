@@ -29,7 +29,7 @@ class RegisterForm(FlaskForm):
         validators=[DataRequired()],
         render_kw={"size": 32, "class": "form-control", "placeholder": "Soy adınızı giriniz."},
     )
-    email = StringField(
+    email = EmailField(
         label="E-posta",
         validators=[DataRequired(), Email()],
         render_kw={"size": 32, "class": "form-control", "placeholder": "Email Adresinizi Girin."},
