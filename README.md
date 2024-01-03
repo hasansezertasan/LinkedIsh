@@ -20,7 +20,8 @@ You can also create a job post and hire people for your projects. You can bid on
 
 ### TODO
 
-- [ ] Dockerize the project
+- [X] Add requirements.txt
+- [x] Dockerize the project
 - [ ] Add Tests
 - [ ] Add CI/CD
 - [ ] Add a frontend
