@@ -1,4 +1,3 @@
-
 function processElement(element) {
     /* Toggle fields with bi-eye-leash */
     document.querySelectorAll(".bi-eye-slash").forEach((element) => {
