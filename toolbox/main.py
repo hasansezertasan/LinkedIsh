@@ -1,3 +1,5 @@
+import datetime
+import json
 import os
 
 import typer
@@ -6,21 +8,22 @@ from database.base import Base
 from database.engine import LocalSession, sync_engine
 from database.models import (
     Announcement,
+    AnonymousFeedback,
     City,
     Company,
+    CompanyDepartment,
     Country,
-    Department,
     Feedback,
-    Language,
-    Position,
+    MemberFeedback,
     School,
+    SchoolDepartment,
     Skill,
     User,
 )
 from database.types import UserRole
+from src.config import basedir
 
 app = typer.Typer()
-basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 @app.command(help="Create database")
@@ -34,13 +37,119 @@ def create_database():
     Base.metadata.create_all(bind=sync_engine)
 
 
+@app.command(help="Seed Users Table")
+def seed_users_table():
+    """
+    Seed Users Table
+
+    Usage:
+        python toolbox seed-users-table
+    """
+    path = os.path.join(basedir, "tests", "assets", "users.json")
+    with open(path, "r", encoding="utf-8") as f:
+        users = json.load(f)
+    for idx, user in enumerate(users):
+        users[idx]["hashed_password"] = user["password"]
+        del users[idx]["password"]
+        users[idx]["birth_date"] = datetime.datetime.strptime(user["birth_date"], "%Y-%m-%d")
+    with LocalSession() as db:
+        for user in users:
+            db.add(User(**user))
+        db.commit()
+
+
+@app.command(help="Seed Skills Table")
+def seed_skills_table():
+    """
+    Seed Skills Table
+
+    Usage:
+        python toolbox seed-skills-table
+    """
+    path = os.path.join(basedir, "tests", "assets", "skills.json")
+    with open(path, "r", encoding="utf-8") as f:
+        skills = json.load(f)
+    with LocalSession() as db:
+        for skill in skills:
+            db.add(Skill(**skill))
+        db.commit()
+
+
+@app.command(help="Seed Feedbacks Table")
+def seed_feedbacks_table():
+    """
+    Seed Feedbacks Table
+
+    Usage:
+        python toolbox seed-feedbacks-table
+    """
+    path = os.path.join(basedir, "tests", "assets", "feedbacks_anonymous.json")
+    with open(path, "r", encoding="utf-8") as f:
+        feedbacks = json.load(f)
+    with LocalSession() as db:
+        for feedback in feedbacks:
+            db.add(AnonymousFeedback(**feedback))
+        db.commit()
+    path = os.path.join(basedir, "tests", "assets", "feedbacks_member.json")
+    with open(path, "r", encoding="utf-8") as f:
+        feedbacks = json.load(f)
+    with LocalSession() as db:
+        for feedback in feedbacks:
+            user = db.query(User).filter_by(username=feedback["username"]).first()
+            feedback["user_id"] = user.id
+            del feedback["username"]
+            db.add(MemberFeedback(**feedback))
+        db.commit()
+
+
+@app.command(help="Seed Locations Table")
+def seed_locations_table():
+    """
+    Seed Locations Table
+
+    Usage:
+        python toolbox seed-locations-table
+    """
+    path = os.path.join(basedir, "tests", "assets", "locations.json")
+    with open(path, "r", encoding="utf-8") as f:
+        locations = json.load(f)
+    with LocalSession() as db:
+        for location in locations:
+            country = Country(name=location["country"])
+            cities = []
+            for city in location["cities"]:
+                cities.append(City(name=city))
+            country.cities = cities
+            db.add(country)
+        db.commit()
+
+
+@app.command(help="Seed Announcements Table")
+def seed_announcements_table():
+    """
+    Seed Announcements Table
+
+    Usage:
+        python toolbox seed-announcements-table
+    """
+    path = os.path.join(basedir, "tests", "assets", "announcements.json")
+    with open(path, "r", encoding="utf-8") as f:
+        announcements = json.load(f)
+    with LocalSession() as db:
+        for announcement in announcements:
+            user = db.query(User).filter_by(username=announcement["username"]).first()
+            announcement["user_id"] = user.id
+            del announcement["username"]
+            db.add(Announcement(**announcement))
+        db.commit()
+
+
 @app.command(help="Create Admin")
 def create_admin():
     """
     Usage:
         python toolbox create-admin
     """
-    Base.metadata.create_all(bind=sync_engine)
     with LocalSession() as db:
         admin_credentials = {
             "username": "superuser",
@@ -64,11 +173,6 @@ def add_countries_and_cities():
 
 @app.command(help="Add Skills")
 def add_skills():
-    pass
-
-
-@app.command(help="Add Languages")
-def add_languages():
     pass
 
 
