@@ -5,8 +5,8 @@ from src.admin.views.mixins import BaseModelView
 
 
 class EmailTemplateModelView(BaseModelView):
-    create_template = "/edit.html"
-    edit_template = "/edit.html"
+    create_template = "/admin/ckeditor.html"
+    edit_template = "/admin/ckeditor.html"
     column_list = [
         EmailTemplate.id,
         EmailTemplate.date_created,

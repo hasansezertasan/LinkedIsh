@@ -18,19 +18,19 @@
     <div class="input-group-prepend col-2">
       <label class="input-group-text" for="username">{{form.username.label}}</label>
     </div>
-    {{form.username(size=32, class="form-control", placeholder="Kullanıcı adınızı girin.")}}
+    {{form.username()}}
   </div>
 
   <div class="input-group form-group my-5">
     <div class="input-group-prepend col-2">
       <label class="input-group-text" for="password">{{form.password.label}}</label>
     </div>
-    {{form.password(size=32, class="form-control", placeholder="Parola girin")}}
+    {{form.password()}}
     <i class="bi bi-eye-slash input-group-text" data-target="{{form.password.id}}"></i>
   </div>
 
   <div class="my-5">
-    {{ form.submit(class_="btn btn-lg btn-dark btn-block form-control") }}
+    {{ form.submit() }}
   </div>
 </form>
 

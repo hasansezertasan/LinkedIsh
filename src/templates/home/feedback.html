@@ -1,0 +1,19 @@
+{% from 'bootstrap5/form.html' import render_form %}
+{% extends 'home/base.html' %}
+{% block header %}
+
+<title>LinkedIsh | Feedback</title>
+
+{% endblock header %}
+
+{% block content %}
+
+{% if error is defined %}
+<div class="alert alert-danger" role="alert">{{error}}</div>
+{% endif %}
+
+<h1 class="text-danger mb-3">Feedback</h1>
+
+{{ render_form(form) }}
+
+{% endblock content %}

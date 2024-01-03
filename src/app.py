@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager
 
@@ -14,6 +15,7 @@ app = Flask(__name__)
 app.config.update(config)
 login_manager = LoginManager()
 ckeditor = CKEditor(app)
+bootstrap = Bootstrap5(app)
 
 admin.init_app(app)
 login_manager.init_app(app)

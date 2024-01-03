@@ -18,25 +18,25 @@
     <div class="input-group-prepend col-2">
       <label class="input-group-text" for="first_name">{{form.first_name.label}}</label>
     </div>
-    {{form.first_name(size=32, class="form-control", placeholder="Adınızı giriniz.")}}
+    {{form.first_name()}}
   </div>
 
   <div class="input-group form-group mb-5">
     <div class="input-group-prepend col-2">
       <label class="input-group-text" for="last_name">{{form.last_name.label}}</label>
     </div>
-    {{form.last_name(size=32, class="form-control", placeholder="Soy adınızı giriniz.")}}
+    {{form.last_name()}}
   </div>
 
   <div class="input-group form-group mb-5">
     <div class="input-group-prepend col-2">
       <label class="input-group-text" for="email">{{form.email.label}}</label>
     </div>
-    {{form.email(size=32, class="form-control", placeholder="Email Adresinizi Girin.")}}
+    {{form.email()}}
   </div>
 
   <div class="my-5">
-    {{ form.submit(class_="btn btn-lg btn-dark btn-block form-control") }}
+    {{ form.submit() }}
   </div>
 </form>
 

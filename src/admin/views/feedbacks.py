@@ -58,7 +58,7 @@ class FeedbackModelView(BaseModelView):
     )
     can_view_details = True
     details_modal = True
-    can_edit = True
+    can_edit = False
     can_create = False
     can_delete = False
     page_size = 50

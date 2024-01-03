@@ -4,7 +4,7 @@ from flask_login import current_user, login_required, login_user, logout_user
 from database.engine import LocalSession
 from database.models import User
 from database.types import UserRole
-from src.forms.user import ChangePasswordForm, EditProfileForm, LoginForm, RegisterForm
+from src.forms.account import ChangePasswordForm, EditProfileForm, LoginForm, RegisterForm
 
 blueprint = Blueprint("account", __name__)
 
