@@ -2,6 +2,8 @@ python-dotenv==1.0.0
 SQLalchemy[aiosqlite]==2.0.23
 sqlalchemy-utils[phone,url,password,babel]==0.41.1
 sqlalchemy-file==0.6.0
+pillow==10.1.0  # SQLAlchemy-File dependency
+fasteners==0.19  # SQLAlchemy-File dependency
 sqlalchemy-mixins==2.0.5
 pillow==10.1.0
 alembic==1.13.1
