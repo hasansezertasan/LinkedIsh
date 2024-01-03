@@ -44,9 +44,9 @@ def create_admin():
     with LocalSession() as db:
         admin_credentials = {
             "username": "superuser",
-            "password": "superuser",
-            "name": "superuser",
-            "surname": "superuser",
+            "hashed_password": "superuser",
+            "first_name": "superuser",
+            "last_name": "superuser",
             "email": "superuser@superuser.com",
             "role": UserRole.SUPERUSER,
         }

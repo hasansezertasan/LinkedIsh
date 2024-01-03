@@ -16,16 +16,16 @@
   {{ form.hidden_tag() }}
   <div class="input-group form-group mb-5">
     <div class="input-group-prepend col-2">
-      <label class="input-group-text" for="name">{{form.name.label}}</label>
+      <label class="input-group-text" for="first_name">{{form.first_name.label}}</label>
     </div>
-    {{form.name(size=32, class="form-control", placeholder="Adınızı giriniz.")}}
+    {{form.first_name(size=32, class="form-control", placeholder="Adınızı giriniz.")}}
   </div>
 
   <div class="input-group form-group mb-5">
     <div class="input-group-prepend col-2">
-      <label class="input-group-text" for="surname">{{form.surname.label}}</label>
+      <label class="input-group-text" for="last_name">{{form.last_name.label}}</label>
     </div>
-    {{form.surname(size=32, class="form-control", placeholder="Soy adınızı giriniz.")}}
+    {{form.last_name(size=32, class="form-control", placeholder="Soy adınızı giriniz.")}}
   </div>
 
   <div class="input-group form-group mb-5">

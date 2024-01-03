@@ -21,19 +21,25 @@ def login():
         password = form.password.data
         with LocalSession() as db:
             user = db.query(User).filter_by(username=username).first()
-            if user and user.verify_password(password):
+            if user and user.hashed_password == password:
                 login_user(user)
                 if user.role == UserRole.SUPERUSER:
                     return redirect(url_for("admin.index"))
                 return redirect(url_for("home.index"))
             else:
-                return render_template("account/login.html", form=form, error="Invalid username or password.")
-    return render_template("account/login.html", form=form)
+                return render_template(
+                    "account/login.html",
+                    form=form,
+                    error="Invalid username or password.",
+                )
+    return render_template(
+        "account/login.html",
+        form=form,
+    )
 
 
 @blueprint.route(rule="/register", endpoint="register", methods=["GET", "POST"])
 def register():
-    # Eğer bir kullanıcı giriş yaptığı halde register endpointini ziyaret ederse, o kullanıcıyı gerekli sayfalara yönlendiriyoruz.
     if current_user.is_authenticated:
         if current_user.role == UserRole.SUPERUSER:
             return redirect(url_for("admin.index"))
@@ -43,19 +49,23 @@ def register():
     if request.method == "POST" and form.validate_on_submit():
         username = form.username.data
         password = form.password.data
-        name = form.name.data
-        surname = form.surname.data
+        first_name = form.first_name.data
+        last_name = form.last_name.data
         email = form.email.data
         with LocalSession() as db:
             found = db.query(User).filter_by(username=username).first()
             if found:
-                return render_template("account/register.html", form=form, error="Username already exists.")
+                return render_template(
+                    "account/register.html",
+                    form=form,
+                    error="Username already exists.",
+                )
 
             user = User(
                 username=username,
-                password=password,
-                name=name,
-                surname=surname,
+                hashed_password=password,
+                first_name=first_name,
+                last_name=last_name,
                 email=email,
             )
             db.add(user)
@@ -83,13 +93,24 @@ def edit():
         with LocalSession() as db:
             user = db.query(User).filter_by(username=current_user.username).first()
             if user:
-                current_user.name = form.name.data
-                current_user.surname = form.surname.data
+                current_user.first_name = form.first_name.data
+                current_user.last_name = form.last_name.data
                 current_user.email = form.email.data
                 db.commit()
-                return render_template("account/edit.html", form=form, error="Profile updated.")
-            return render_template("account/edit.html", form=form, error="User not found.")
-    return render_template("account/edit.html", form=form)
+                return render_template(
+                    "account/edit.html",
+                    form=form,
+                    error="Profile updated.",
+                )
+            return render_template(
+                "account/edit.html",
+                form=form,
+                error="User not found.",
+            )
+    return render_template(
+        "account/edit.html",
+        form=form,
+    )
 
 
 @blueprint.route(
@@ -109,12 +130,16 @@ def password_change():
             )
         with LocalSession() as db:
             user = db.query(User).filter_by(username=current_user.username).first()
-            if user and user.verify_password(form.password.data):
-                current_user.password = form.new_password.data
+            if user and user.hashed_password == form.password.data:
+                user.hashed_password = form.new_password.data
                 db.commit()
                 return redirect(url_for("account.logout"))
-            return render_template("account/password-change.html", form=form, error="Invalid password.")
-    return render_template("account/password-change.html", form=form)
-
-
-# blueprint.add_url_rule(rule='/password/reset', endpoint='password_reset', view_func=password_reset, methods=['GET', 'POST'])
+            return render_template(
+                "account/password-change.html",
+                form=form,
+                error="Invalid password.",
+            )
+    return render_template(
+        "account/password-change.html",
+        form=form,
+    )

@@ -16,11 +16,11 @@ class RegisterForm(FlaskForm):
         label="Parola Tekrar",
         validators=[DataRequired(), EqualTo("password")],
     )
-    name = StringField(
+    first_name = StringField(
         label="Ad",
         validators=[DataRequired()],
     )
-    surname = StringField(
+    last_name = StringField(
         label="Soyad",
         validators=[DataRequired()],
     )
@@ -70,11 +70,11 @@ class ChangePasswordForm(FlaskForm):
 
 
 class EditProfileForm(FlaskForm):
-    name = StringField(
+    first_name = StringField(
         label="Ad",
         validators=[DataRequired()],
     )
-    surname = StringField(
+    last_name = StringField(
         label="Soyad",
         validators=[DataRequired()],
     )

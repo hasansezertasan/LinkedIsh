@@ -7,6 +7,7 @@ from database.models import User
 from src import blueprints
 from src.admin.config import admin
 from src.config import config
+from src.driver import StorageManager  # noqa: F401
 
 app = Flask(__name__)
 app.config.update(config)
