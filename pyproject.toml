@@ -38,6 +38,7 @@ Flask-CKEditor = "^0.5.1"
 Flask-HTMX = "^0.3.2"
 Bootstrap-Flask = "^2.3.3"
 Flask-JWT-Extended = "^4.6.0"
+Flask-APScheduler = "^1.13.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.25.1"
