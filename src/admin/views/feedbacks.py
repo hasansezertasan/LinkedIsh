@@ -1,6 +1,7 @@
 from wtforms import TextAreaField
 
 from database.models import AnonymousFeedback, Feedback, MemberFeedback
+from database.types import FeedbackCategory, FeedbackType
 from src.admin.views.mixins import BaseModelView
 
 
@@ -44,18 +45,45 @@ class FeedbackModelView(BaseModelView):
         Feedback.category,
         Feedback.type,
     ]
+    column_formatters = {
+        Feedback.category: lambda v, c, m, p: m.category.value,
+    }
     form_columns = [
         Feedback.subject,
         Feedback.content,
         Feedback.category,
         Feedback.type,
+        Feedback.is_read,
     ]
-    column_formatters = {
-        Feedback.category: lambda v, c, m, p: m.category.value,
-    }
     form_overrides = dict(
         content=TextAreaField,
     )
+    form_args = {
+        "is_read": {
+            "coerce": int,
+        },
+    }
+    column_choices = {
+        "is_read": [
+            (True, "Read"),
+            (False, "Not Read"),
+        ],
+        "type": [
+            (FeedbackType.MEMBER.value, "Member"),
+            (FeedbackType.ANONYMOUS.value, "Anonymous"),
+        ],
+        "category": [
+            (FeedbackCategory.SUGGESTION, "Suggestion"),
+            (FeedbackCategory.BUG, "Bug"),
+            (FeedbackCategory.OTHER, "Other"),
+        ],
+    }
+    form_choices = {
+        "is_read": [
+            (1, "Read"),
+            (0, "Not Read"),
+        ],
+    }
     can_view_details = True
     details_modal = True
     can_edit = False
