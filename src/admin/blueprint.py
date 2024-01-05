@@ -40,31 +40,38 @@ from .views import (
 
 admin = Admin(
     name="LinkedIsh Admin Panel",
-    index_view=IndexView(),
+    index_view=IndexView(
+        name="Home",
+        # url="/",
+        category="Home",
+        template="/admin/index.html",
+    ),
     template_mode="bootstrap4",
+    endpoint="admin",
 )
 
 # Categories
+admin.add_category(name="Home")
 admin.add_category(name="Store")
 admin.add_category(name="Dynamic")
-admin.add_category(name="Extra")
 admin.add_sub_category(name="Locations", parent_name="Store")
 admin.add_sub_category(name="Experiences", parent_name="Store")
 admin.add_sub_category(name="Educations", parent_name="Store")
+admin.add_sub_category(name="Links", parent_name="Home")
 
 # Menu Links
 admin.add_link(
     MenuLink(
         name="LinkedIsh",
         url="/",
-        category="Extra",
+        category="Links",
     )
 )
 # Custom Views
 admin.add_view(
     PingView(
         name="Ping",
-        category="Extra",
+        category="Links",
     )
 )
 
