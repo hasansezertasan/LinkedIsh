@@ -15,7 +15,7 @@ class School(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
 
 
 class SchoolDepartment(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "department"
+    __tablename__ = "school__department"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):
