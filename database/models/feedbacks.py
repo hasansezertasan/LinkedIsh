@@ -13,6 +13,7 @@ class Feedback(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
     subject: Mapped[String64]
     content: Mapped[String2048]
     category: Mapped[FeedbackCategory] = mapped_column()
+    is_read: Mapped[bool] = mapped_column(default=False)
     type: Mapped[FeedbackType] = mapped_column()
 
     __mapper_args__ = {
