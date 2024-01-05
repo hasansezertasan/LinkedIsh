@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, redirect, render_template, request, url_for
+from flask import Blueprint, jsonify, redirect, render_template, request, send_from_directory, url_for
 from flask_login import current_user
 
 from database.engine import LocalSession
@@ -30,7 +30,7 @@ def ping():
 
 
 @blueprint.route("/feedback", endpoint="feedback", methods=["GET", "POST"])
-def login():
+def feedback():
     form = None
     if current_user.is_authenticated:
         form = MemberFeedbackForm()
@@ -58,3 +58,8 @@ def login():
         "home/feedback.html",
         form=form,
     )
+
+
+@blueprint.route("/robots.txt", methods=["GET"], endpoint="robots")
+def static_from_root():
+    return send_from_directory("static", request.path[1:])
