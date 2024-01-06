@@ -13,8 +13,7 @@ class UserModelView(BaseModelView):
     column_list = [
         "id",
         "username",
-        "first_name",
-        "last_name",
+        "full_name",
         "role",
     ]
     column_details_list = [
@@ -25,6 +24,7 @@ class UserModelView(BaseModelView):
         "first_name",
         "last_name",
         "role",
+        "feedbacks",
     ]
     column_labels = {
         "id": "ID",
@@ -81,6 +81,7 @@ class UserModelView(BaseModelView):
         "date_created",
         "date_updated",
         "hashed_password",
+        "feedbacks",
     ]
     form_args = {
         "username": {
