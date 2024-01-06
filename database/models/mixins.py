@@ -92,7 +92,7 @@ class UserDeletedMixin:
         )
 
     @declared_attr
-    def deleted_by_user(cls) -> Mapped["User"]:
+    def deleted_by_user(cls) -> Mapped["User"]:  # type: ignore
         """User who deleted the record."""
         return relationship(
             "User",
@@ -112,7 +112,7 @@ class UserUpdatedMixin:
         )
 
     @declared_attr
-    def updated_by_user(cls) -> Mapped["User"]:
+    def updated_by_user(cls) -> Mapped["User"]:  # type: ignore
         """User who updated the record."""
         return relationship(
             "User",
@@ -132,7 +132,7 @@ class UserCreatedMixin:
         )
 
     @declared_attr
-    def user(cls) -> Mapped["User"]:
+    def user(cls) -> Mapped["User"]:  # type: ignore
         """User who created the record."""
         return relationship(
             "User",
