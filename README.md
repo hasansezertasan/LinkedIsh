@@ -22,24 +22,27 @@ LinkedIsh is something like a mix of LinkedIn and Upwork/Fiverr.
   - Team
   - Agency
   - Company
-- [ ] Customers:
-  - [ ] Add Job Post
-  - [ ] Hire
-  - [ ] Job Post Bidding
-- [ ] Freelancer Portfolio:
-  - [ ] Add skills
-  - [ ] Add projects
-  - [ ] Add experiences
-  - [ ] Add education
-  - [ ] Add languages
-- [ ] Chat System
-- [ ] Internationalization
-- [ ] JWT Authentication
-- [ ] Add Services
-- [ ] Live Feed
-- [ ] Third Party Login:
-  - [ ] Google
-  - [ ] Github
+
+| Scope      | Feature              | Database | Admin | Frontend |
+| ---------- | -------------------- | -------- | ----- | -------- |
+| Freelancer | Skills               | [x]      | [ ]   | [ ]      |
+| Freelancer | Languages            | [x]      | [ ]   | [ ]      |
+| Freelancer | Projects             | [x]      | [ ]   | [ ]      |
+| Freelancer | Education            | [x]      | [ ]   | [ ]      |
+| Freelancer | Experience           | [x]      | [ ]   | [ ]      |
+| Freelancer | Services             | [x]      | [ ]   | [ ]      |
+| Freelancer | Service Offers       | [x]      | [ ]   | [ ]      |
+| General    | Persona System       | [ ]      | [ ]   | [ ]      |
+| Customer   | Job Post             | [ ]      | [ ]   | [ ]      |
+| Customer   | Job Post Bidding     | [ ]      | [ ]   | [ ]      |
+| Customer   | Hiring               | [ ]      | [ ]   | [ ]      |
+| General    | Chat System          | [ ]      | [ ]   | [ ]      |
+| General    | Internationalization | [ ]      | [ ]   | [ ]      |
+| General    | Google Sign On       | [ ]      | [ ]   | [ ]      |
+| General    | Github Sign On       | [ ]      | [ ]   | [ ]      |
+| General    | JWT Authentication   | [ ]      | [ ]   | [ ]      |
+| General    | Email Verification   | [ ]      | [ ]   | [ ]      |
+| General    | Live Feed            | [ ]      | [ ]   | [ ]      |
 
 ### TODO
 
