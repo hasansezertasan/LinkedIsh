@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 from flask_login import LoginManager
@@ -10,6 +10,7 @@ from src import blueprints
 from src.admin.blueprint import admin
 from src.config import config
 from src.driver import StorageManager  # noqa: F401
+from src.navbar import Navbar, NavbarLink
 
 app = Flask(__name__)
 app.config.update(config)
@@ -20,6 +21,12 @@ bootstrap = Bootstrap5(app)
 admin.init_app(app)
 login_manager.init_app(app)
 login_manager.login_view = "account.login"
+
+navbar = Navbar(url_for=url_for)
+navbar.add_link(NavbarLink(name="Anasayfa", endpoint="home.index"))
+navbar.add_link(NavbarLink(name="Geri Bildirim", endpoint="home.feedback"))
+navbar.add_link(NavbarLink(name="Admin Paneli", endpoint="admin.index"))
+navbar.init_app(app)
 
 
 @login_manager.user_loader
