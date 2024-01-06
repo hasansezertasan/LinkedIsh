@@ -29,7 +29,11 @@ def ping():
     return jsonify(value)
 
 
-@blueprint.route("/feedback", endpoint="feedback", methods=["GET", "POST"])
+@blueprint.route(
+    rule="/feedback",
+    endpoint="feedback",
+    methods=["GET", "POST"],
+)
 def feedback():
     form = None
     if current_user.is_authenticated:
@@ -60,6 +64,10 @@ def feedback():
     )
 
 
-@blueprint.route("/robots.txt", methods=["GET"], endpoint="robots")
+@blueprint.route(
+    rule="/robots.txt",
+    methods=["GET"],
+    endpoint="robots",
+)
 def static_from_root():
     return send_from_directory("static", request.path[1:])
