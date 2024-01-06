@@ -1,3 +1,4 @@
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 
 from database.base import Base
@@ -14,8 +15,16 @@ class School(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
         return self.name
 
 
-class SchoolDepartment(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
-    __tablename__ = "school__department"
+class Field(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+    __tablename__ = "field"
+    name: Mapped[String256] = mapped_column(unique=True)
+
+    def __repr__(self):
+        return self.name
+
+
+class Degree(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+    __tablename__ = "degree"
     name: Mapped[String256] = mapped_column(unique=True)
 
     def __repr__(self):
