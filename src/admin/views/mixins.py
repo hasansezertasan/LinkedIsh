@@ -65,9 +65,9 @@ class BaseModelView(ModelView):
         # Check the docs for more information
         return super().is_action_allowed(name)
 
-    def is_editable(self) -> bool:
+    def is_editable(self, name: str) -> bool:
         # Check the docs for more information
-        return super().is_editable()
+        return super().is_editable(name)
 
     def _handle_view(self, name, **kwargs):
         # This method will be executed before calling any view method.
