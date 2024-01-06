@@ -1,9 +1,8 @@
-from flask import Blueprint, jsonify, redirect, render_template, request, send_from_directory, url_for
+from flask import Blueprint, jsonify, render_template, request, send_from_directory
 from flask_login import current_user
 
 from database.engine import LocalSession
-from database.models import AnonymousFeedback, MemberFeedback, User
-from database.types import UserRole
+from database.models import AnonymousFeedback, MemberFeedback
 from src.forms.feedback import AnonymousFeedbackForm, MemberFeedbackForm
 
 blueprint = Blueprint("home", __name__)
