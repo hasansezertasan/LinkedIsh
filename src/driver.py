@@ -15,6 +15,9 @@ with contextlib.suppress(ContainerAlreadyExistsError):
 with contextlib.suppress(ContainerAlreadyExistsError):
     upload_driver.create_container(container_name="user-avatar")
 
+with contextlib.suppress(ContainerAlreadyExistsError):
+    upload_driver.create_container(container_name="job-attachments")
+
 
 for container in upload_driver.list_containers():
     StorageManager.add_storage(
