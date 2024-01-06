@@ -21,7 +21,7 @@
     },
     {
         "username": "dineshchugtai",
-        "password": "dineshchugtai",
+        "password": "goldenchain",
         "first_name": "Dinesh",
         "last_name": "Chugtai",
         "phone": "+1 123 456 7890",
@@ -38,5 +38,55 @@
         "email": "gilfoyle@bertram.xyz",
         "birth_date": "1990-01-01",
         "role": "BLOCKED"
+    },
+    {
+        "username": "jared",
+        "password": "jared",
+        "first_name": "Jared",
+        "last_name": "Dunn",
+        "phone": "+1 123 456 7890",
+        "email": "jareddunn@piedpiper.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "erlichbachman",
+        "password": "erlichbachman",
+        "first_name": "Erlich",
+        "last_name": "Bachman",
+        "phone": "+1 123 456 7890",
+        "email": "erlichbachman@aviato.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "password",
+        "password": "password",
+        "first_name": "Nelson",
+        "last_name": "Bighetti",
+        "phone": "+1 123 456 7890",
+        "email": "bighead@hotmail.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "gavinbelson",
+        "password": "gavinbelson",
+        "first_name": "Gavin",
+        "last_name": "Belson",
+        "phone": "+1 123 456 7890",
+        "email": "gavin@holi.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
+    },
+    {
+        "username": "petergregory",
+        "password": "petergregory",
+        "first_name": "Peter",
+        "last_name": "Gregory",
+        "phone": "+1 123 456 7890",
+        "email": "peter@raviga.com",
+        "birth_date": "1990-01-01",
+        "role": "USER"
     }
 ]

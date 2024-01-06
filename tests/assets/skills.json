@@ -49,5 +49,137 @@
     },
     {
         "name": "Lecturer"
+    },
+    {
+        "name": "Security"
+    },
+    {
+        "name": "Penetration Testing"
+    },
+    {
+        "name": "Software Development"
+    },
+    {
+        "name": "Software Engineering"
+    },
+    {
+        "name": "Design Patterns"
+    },
+    {
+        "name": "Algorithms"
+    },
+    {
+        "name": "Data Structures"
+    },
+    {
+        "name": "Data Science"
+    },
+    {
+        "name": "Machine Learning"
+    },
+    {
+        "name": "Deep Learning"
+    },
+    {
+        "name": "Artificial Intelligence"
+    },
+    {
+        "name": "Computer Vision"
+    },
+    {
+        "name": "Natural Language Processing"
+    },
+    {
+        "name": "Data Analysis"
+    },
+    {
+        "name": "Data Visualization"
+    },
+    {
+        "name": "Data Engineering"
+    },
+    {
+        "name": "Data Mining"
+    },
+    {
+        "name": "Big Data"
+    },
+    {
+        "name": "Cloud Computing"
+    },
+    {
+        "name": "DevOps"
+    },
+    {
+        "name": "Linux"
+    },
+    {
+        "name": "Unix"
+    },
+    {
+        "name": "Windows"
+    },
+    {
+        "name": "MacOS"
+    },
+    {
+        "name": "Git"
+    },
+    {
+        "name": "GitHub"
+    },
+    {
+        "name": "GitLab"
+    },
+    {
+        "name": "BitBucket"
+    },
+    {
+        "name": "Jira"
+    },
+    {
+        "name": "Confluence"
+    },
+    {
+        "name": "Trello"
+    },
+    {
+        "name": "Slack"
+    },
+    {
+        "name": "Kanban"
+    },
+    {
+        "name": "Scrum"
+    },
+    {
+        "name": "Google Cloud"
+    },
+    {
+        "name": "Amazon Web Services"
+    },
+    {
+        "name": "Microsoft Azure"
+    },
+    {
+        "name": "Heroku"
+    },
+    {
+        "name": "Digital Ocean"
+    },
+    {
+        "name": "Netlify"
+    },
+    {
+        "name": "Vercel"
+    },
+    {
+        "name": "Firebase"
+    },
+    {
+        "name": "MongoDB"
+    },
+    {
+        "name": "PostgreSQL"
     }
 ]

@@ -34,5 +34,11 @@
         "subject": "Export Chat History",
         "content": "Is there a way to export chat history for archival purposes? It would be a helpful feature.",
         "username": "gilfoyle"
+    },
+    {
+        "category": "BUG",
+        "subject": "This application sucks",
+        "content": "I think this application sucks. Please fix it. Please, please, please.",
+        "username": "gavinbelson"
     }
 ]
