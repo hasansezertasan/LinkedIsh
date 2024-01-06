@@ -32,6 +32,10 @@ class MemberFeedback(Feedback, UserCreatedMixin):
         name="id",
         primary_key=True,
     )
+    user: Mapped["User"] = relationship(  # type: ignore
+        "User",
+        back_populates="feedbacks",
+    )
 
     __mapper_args__ = {
         "polymorphic_identity": "MEMBER",

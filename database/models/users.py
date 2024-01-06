@@ -1,7 +1,7 @@
 import datetime
 
 from flask_login import UserMixin
-from sqlalchemy.orm import Mapped, column_property, mapped_column
+from sqlalchemy.orm import Mapped, column_property, mapped_column, relationship
 from sqlalchemy_file import ImageField
 from sqlalchemy_file.validators import ImageValidator, SizeValidator
 from sqlalchemy_utils import PasswordType
@@ -59,6 +59,9 @@ class User(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin, UserMixin):
             ),
         )
     )
+
+    # Relationships
+    feedbacks: Mapped[list["MemberFeedback"]] = relationship()  # type: ignore
 
     def __repr__(self):
         return self.username
