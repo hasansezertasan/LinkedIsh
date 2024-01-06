@@ -156,4 +156,4 @@ class UserModelView(BaseModelView):
         if not record:
             flash(f"User with {id} id does not exist", "error")
             return redirect(url_for("user.index_view"))
-        return self.render("admin/profile.html", username=record.username)
+        return self.render("admin/user/profile.html", username=record.username)
