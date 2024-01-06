@@ -20,3 +20,19 @@ class CompanyDepartment(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
 
     def __repr__(self):
         return self.name
+
+
+class Organization(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+    __tablename__ = "organization"
+    name: Mapped[String256] = mapped_column(unique=True)
+
+    def __repr__(self):
+        return self.name
+
+
+class Industry(Base, IDMixin, DateCreatedMixin, DateUpdatedMixin):
+    __tablename__ = "industry"
+    name: Mapped[String256] = mapped_column(unique=True)
+
+    def __repr__(self):
+        return self.name
